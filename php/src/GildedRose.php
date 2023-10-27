@@ -26,7 +26,7 @@ final class GildedRose
                 case $item->name == 'Aged Brie':
                     $item->sellIn -= 1;
                     if ($item->quality < 50) {
-                        $item->quality += 1;
+                        $item->quality += $item->sellIn < 0 ? 2 : 1;
                     }
                     break;
 
